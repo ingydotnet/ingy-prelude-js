@@ -1,0 +1,28 @@
+=meta: 0.0.2
+
+name: ingy-prelude
+version: 0.0.1
+abstract: Ingy döt Net's Prelude For JavaScript
+homepage: http://ingy.net
+tag: [ingy, prelude, javascript]
+license: MIT
+copyright: 2018
+
+author:
+  name: Ingy döt Net
+  email: ingy@ingy.net
+  homepage: http://ingy.net
+  github: ingydotnet
+  twitter: ingydotnet
+  freenode: ingy
+
+devel:
+  git: https://github.com/testml-lang/ingy-prelude-js
+  bug: https://github.com/testml-lang/ingy-prelude-js/issues
+  irc: irc.freenode.net#ingy
+
+=npm:
+  main: ./lib/ingy-prelude/index.js
+  dependencies:
+    lodash: '>=2.2.2'
+    js-yaml: '>=3.11.0'
