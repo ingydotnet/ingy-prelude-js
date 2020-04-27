@@ -25,4 +25,5 @@ devel:
   main: ./lib/ingy-prelude/index.js
   dependencies:
     lodash: '>=2.2.2'
-    js-yaml: '>=3.11.0'
+    sprintf-js: '>=1.1.2'
+    yaml: '>=1.9.2'

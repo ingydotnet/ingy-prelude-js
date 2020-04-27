@@ -3,12 +3,15 @@
 require('lodash').extend global,
   IngyPrelude: VERSION: '0.0.2'
 
-  # Use lodash
+  # Use lodash:
   _: require 'lodash'
 
   # Use most common builtin modules:
   fs: require 'fs'
   path: require 'path'
+
+  # Other common useful modules:
+  sprintf: require('sprintf-js').sprintf
 
   # Common I/O and termination functions:
   out: (string)->
@@ -61,10 +64,10 @@ require('lodash').extend global,
     out dump data...
     data[0]
   DUMP: (data...)->
-    yaml = require 'js-yaml'
+    yaml = require 'yaml'
     dump = ''
     for elem in data
-      dump += "---\n#{yaml.dump elem}...\n"
+      dump += "---\n#{yaml.stringify elem}...\n"
     dump
   WWW: (data...)->
     err DUMP data...
