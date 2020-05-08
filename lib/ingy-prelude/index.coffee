@@ -25,8 +25,7 @@ require('lodash').extend global,
   exit: (rc=0)->
     process.exit rc
   die: (msg)->
-    err "Died: #{msg}\n"
-    exit 1
+    throw "Died: #{msg}\n"
 
   # Synchronous disk I/O functions:
   file_read: (file_path)->
@@ -59,7 +58,7 @@ require('lodash').extend global,
     data[0]
   xxx: (data...)->
     err dump data...
-    exit 1
+    throw ''
   yyy: (data...)->
     out dump data...
     data[0]
@@ -74,7 +73,7 @@ require('lodash').extend global,
     data[0]
   XXX: (data...)->
     err DUMP data...
-    exit 1
+    throw ''
   YYY: (data...)->
     out DUMP data...
     data[0]
