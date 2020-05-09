@@ -1,12 +1,12 @@
 =meta: 0.0.2
 
 name: ingy-prelude
-version: 0.0.3
+version: 0.0.4
 abstract: Ingy döt Net's Prelude For JavaScript
 homepage: http://ingy.net
 tag: [ingy, prelude, javascript]
 license: MIT
-copyright: 2020
+copyright: 2018-2020
 
 author:
   name: Ingy döt Net

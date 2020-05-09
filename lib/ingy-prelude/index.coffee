@@ -1,7 +1,7 @@
 # Ingy döt Net's Prelude for NodeJS programming:
 
 require('lodash').extend global,
-  IngyPrelude: VERSION: '0.0.2'
+  IngyPrelude: VERSION: '0.0.4'
 
   # Use lodash:
   _: require 'lodash'
