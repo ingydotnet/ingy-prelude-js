@@ -64,10 +64,29 @@ require('lodash').extend global,
     data[0]
   DUMP: (data...)->
     yaml = require 'yaml'
+    {stringifyString} = require('yaml/util')
+    yaml.defaultOptions.customTags = [
+      tag: '!function'
+      identify: (v)-> v instanceof Function
+      stringify: (v...)-> stringifyString
+        value: v[0].value.toString(), ...v[1..]
+    ,
+      tag: '!regexp'
+      identify: (v)-> v instanceof RegExp
+      stringify: (v...)-> stringifyString
+        value: v[0].value.toString(), ...v[1..]
+    ]
     dump = ''
     for elem in data
-      dump += "---\n#{yaml.stringify elem}...\n"
-    dump
+      str = yaml.stringify(elem).replace(/\n$/, '')
+      if _.isString(elem) or
+         _.isNumber(elem) or
+         _.isNull(elem) or
+         _.isRegExp(elem)
+        dump += "--- #{str}\n"
+      else
+        dump += "---\n#{str}\n"
+    dump + "...\n"
   WWW: (data...)->
     err DUMP data...
     data[0]
